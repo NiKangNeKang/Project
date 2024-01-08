@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kakao Geocoding Service</title>
+    </head>
+    <body>
+
+        <center><h1> Type address that you want to convert ! </h1></center>
+        <br>
+        <center>This is tool that change address into Latitude and Longitude by using Kakaomap<br>
+        You can Enter the address and Get Latitude and Longitude<br>
+        Should you have any questions, please feel free to contact me anytime.<br>
+        <a target="_blank" href="mailto:miner911@khu.ac.kr">miner911@khu.ac.kr</a><br></center>
+        <br>
+        <center><h2> <a target="_blank" href="https://map.kakao.com">If you forget address, Click me and Find address ! </a></h2></center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <center><form action="/result" method="POST">
+            <input type="text" name="address" placeholder="plz Enter address">
+            <input type="submit" value="Geocoding it !">
+        </form></center>
+
+        {% if result %}
+        <center><h2>The Latitude and Longitude is ...</h2>
+        <p>위도: {{result[0]}}</p>
+        <p>경도: {{result[1]}}</p>
+        </center>
+        {% endif %}
+        
+    </body>
+</html>
